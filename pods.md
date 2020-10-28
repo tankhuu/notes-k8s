@@ -150,6 +150,10 @@ annotations: kubernetes.io/created-by: |
 
 `kubectl annotate pod kubia-manual mycompany.com/someannotation="foo bar"`
 
+## kubectl explain command
+
+To quickly look up the information on any Kubernetes resource.
+
 ## Useful commands
 
 Get yaml descriptor of an existing pod
@@ -171,3 +175,27 @@ Create pod
 See the full descriptor of the pod
 
 `kubectl get po kubia-manual -o yaml`
+
+Deleting a pod by name
+
+`kubectl delete po kubia-gpu`
+
+Deleting a multiple pod by name
+
+`kubectl delete po pod1 pod2`
+
+Deleting pods using label selectors
+
+`kubectl delete po -l creation_method=manual`
+
+Deleting pods by deleting the whole namespace
+
+`kubectl delete ns custom-namespace`
+
+Deleting all pods in a current namespace, while keeping the namespace
+
+`kubectl delete po --all`
+
+Deleting (almost) all resources in a namespace
+
+`kubectl delete all --all`
