@@ -11,4 +11,14 @@ Kubernetes can probe a container using one of the three mechanisms:
 - A TCP Socket probe tries to open a TCP connection to the specified port of the container. If the connection is established successfully, the probe is successful. Otherwise, the container is restarted.
 - An Exec probe executes an arbitrary command inside the container and checks the command’s exit status code. If the status code is 0, the probe is successful. All other codes are considered failures.
 
+## Replication Controller
+
+A ReplicationController constantly monitors the list of running pods and makes sure the actual number of pods of a “type” always matches the desired number.
+
+3 parts of a Replication Controller:
+
+- label selector
+- replica count
+- pod template
+
 ## Commands
