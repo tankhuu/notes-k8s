@@ -26,3 +26,9 @@ A ReplicationController constantly monitors the list of running pods and makes s
 Changes to the label selector and the pod template have no effect on existing pods. Changing the label selector makes the existing pods fall out of the scope of the ReplicationController, so the controller stops caring about them.
 
 ## Commands
+
+### Delete a ReplicationController
+
+When deleting a ReplicationController with kubectl delete, you can keep its pods running by passing the --cascade=false option to the command.
+
+`kubectl delete rc kubia --cascade=false`
